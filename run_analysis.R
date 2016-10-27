@@ -50,8 +50,6 @@ x.data <- select(x.data, mean.std.features$V1)
 names(x.data) <- mean.std.features$V2
   
 # -- 3. Uses descriptive activity names to name the activities in the data set
-
-
 # replase values with correct activity labels
 y.data[, 1] <- activity.labels[y.data[, 1], 2]
 # set column name
@@ -73,7 +71,7 @@ names(tidy.data.set)<-gsub("Acc", "Accelerometer", names(tidy.data.set))
 names(tidy.data.set)<-gsub("Gyro", "Gyroscope", names(tidy.data.set))
 names(tidy.data.set)<-gsub("Mag", "Magnitude", names(tidy.data.set))
 names(tidy.data.set)<-gsub("BodyBody", "Body", names(tidy.data.set))
-
+# save hard copy of result
 write.csv(tidy.data.set, "tidy_data_set.csv")
 
 

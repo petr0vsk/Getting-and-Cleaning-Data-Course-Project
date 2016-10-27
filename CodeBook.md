@@ -26,5 +26,6 @@
     features <- read.table("features.txt") # names of variable features
     activity.labels <- read.table("activity_labels.txt") # levels of varible activity
     
+#### 3. let`s do step One and Merges the training and the test sets to create one data set 
 
 

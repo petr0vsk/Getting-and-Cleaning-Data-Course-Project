@@ -62,7 +62,7 @@ final.data.set <- bind_cols(x.data, y.data, subject.data)
 
 # -- 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 # aggregate and find means
-tidy.data.set <- ddply(final.data.set, .(subject, activities), function(x) colMeans(x[, 1:66]))
+tidy.data.set <- ddply(final.data.set, .(Subject, Activities), function(x) colMeans(x[, 1:66]))
 # make names of columns some more readable
 names(tidy.data.set)<-gsub("^t", "time", names(tidy.data.set))
 names(tidy.data.set)<-gsub("^f", "frequency", names(tidy.data.set))

@@ -32,7 +32,7 @@
     subject.data <- bind_rows(subject.train, subject.test)
 
 #### Check the structures of the data frame\`s
-    str(x.data)
+   str(x.data)
     'data.frame':	10299 obs. of  66 variables:
     $ tBodyAcc-mean()-X          : num  0.289 0.278 0.28 0.279 0.277 ...
     $ tBodyAcc-mean()-Y          : num  -0.0203 -0.0164 -0.0195 -0.0262 -0.0166 ...

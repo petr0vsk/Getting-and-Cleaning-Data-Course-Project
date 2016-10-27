@@ -103,5 +103,14 @@ str(x.data)
     $ fBodyBodyGyroJerkMag-mean(): num  -0.992 -0.996 -0.995 -0.995 -0.995 ...
     $ fBodyBodyGyroJerkMag-std() : num  -0.991 -0.996 -0.995 -0.995 -0.995 ...
     
+str(y.data)
+
+    'data.frame':	10299 obs. of  1 variable:
+     $ Activities: Factor w/ 6 levels "LAYING","SITTING",..: 3 3 3 3 3 3 3 3 3 3 ...
+     
+str(subject.data)
+
+    'data.frame':	10299 obs. of  1 variable:
+     $ Subject: int  1 1 1 1 1 1 1 1 1 1 ...
     
 

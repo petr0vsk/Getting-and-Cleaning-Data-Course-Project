@@ -45,7 +45,6 @@ subject.data <- bind_rows(subject.train, subject.test)
 
 features <- read.table("features.txt") 
 mean.std.features <-  filter( features, str_detect(features$V2, "-(mean|std)\\(\\)" ) ) 
-
 x.data <- select(x.data, mean.std.features$V1)
 names(x.data) <- mean.std.features$V2
   
@@ -53,11 +52,11 @@ names(x.data) <- mean.std.features$V2
 # replase values with correct activity labels
 y.data[, 1] <- activity.labels[y.data[, 1], 2]
 # set column name
-names(y.data) <- "activities"
+names(y.data) <- "Activities"
 
 # -- 4. Appropriately labels the data set with descriptive variable names.  
 # set column name
-names(subject.data) <- "subject"
+names(subject.data) <- "Subject"
 # bind all the data in a single final data set
 final.data.set <- bind_cols(x.data, y.data, subject.data)
 
@@ -72,6 +71,6 @@ names(tidy.data.set)<-gsub("Gyro", "Gyroscope", names(tidy.data.set))
 names(tidy.data.set)<-gsub("Mag", "Magnitude", names(tidy.data.set))
 names(tidy.data.set)<-gsub("BodyBody", "Body", names(tidy.data.set))
 # save hard copy of result
-write.csv(tidy.data.set, "tidy_data_set.csv")
+write.csv(tidy.data.set, "tidy_data_set.csv", row.names = F )
 
 

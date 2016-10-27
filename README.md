@@ -3,17 +3,19 @@
 
  * Download the dataset from Internet
  
- * Load the activity and feature info
+ * Read data from the targeted files
  
- * Loads both the training and test datasets, keeping only those columns which reflect a mean or standard deviation
+ * Read data from the files into the variables
  
- * Loads the activity and subject data for each dataset, and merges those columns with the dataset
+ * Merges the training and the test sets to create one data set
  
- * Merges the two datasets
+ * Extracts only the measurements on the mean and standard deviation for each measurement
  
- * Converts the activity and subject columns into factors
+ * Uses descriptive activity names to name the activities in the data set
  
- * Creates a tidy dataset that consists of the average (mean) value of each variable for each subject and activity pair.
+ * Creates a second,independent tidy data set and ouput it
+ 
+ * Save result in to csv-file
  
 
 #### The end result is shown in the file tidy_data_set.csv.

@@ -27,12 +27,35 @@
     activity.labels <- read.table("activity_labels.txt") # levels of varible activity
     
 #### 3. Let\`s do step One and merges the training and the test sets to create one data set 
+
+
     x.data <- bind_rows(x.train, x.test)
     y.data <- bind_rows(y.train, y.test)
     subject.data <- bind_rows(subject.train, subject.test)
 
 #### Check the structures of the data frame\`s
 
+str(x.data)
+
+   
+    
+str(y.data)
+
+    
+     
+str(subject.data)
+
+    'data.frame':	10299 obs. of  1 variable:
+     $ Subject: int  1 1 1 1 1 1 1 1 1 1 ...
+     
+#### 4. Let\`s do step two and Extracts only the measurements on the mean and standard deviation for each measurement
+
+
+    features <- read.table("features.txt") 
+    mean.std.features <-  filter( features, str_detect(features$V2, "-(mean|std)\\(\\)" ) ) 
+    x.data <- select(x.data, mean.std.features$V1)
+    names(x.data) <- mean.std.features$V2
+    
 str(x.data)
 
     'data.frame':	10299 obs. of  66 variables:
@@ -102,15 +125,5 @@ str(x.data)
     $ fBodyBodyGyroMag-std()     : num  -0.961 -0.983 -0.986 -0.988 -0.989 ...
     $ fBodyBodyGyroJerkMag-mean(): num  -0.992 -0.996 -0.995 -0.995 -0.995 ...
     $ fBodyBodyGyroJerkMag-std() : num  -0.991 -0.996 -0.995 -0.995 -0.995 ...
-    
-str(y.data)
-
-    'data.frame':	10299 obs. of  1 variable:
-     $ Activities: Factor w/ 6 levels "LAYING","SITTING",..: 3 3 3 3 3 3 3 3 3 3 ...
-     
-str(subject.data)
-
-    'data.frame':	10299 obs. of  1 variable:
-     $ Subject: int  1 1 1 1 1 1 1 1 1 1 ...
     
 

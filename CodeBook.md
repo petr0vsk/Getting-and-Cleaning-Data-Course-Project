@@ -26,6 +26,10 @@
     features <- read.table("features.txt") # names of variable features
     activity.labels <- read.table("activity_labels.txt") # levels of varible activity
     
-#### 3. let`s do step One and Merges the training and the test sets to create one data set 
+#### 3. Let\`s do step One and merges the training and the test sets to create one data set 
+    x.data <- bind_rows(x.train, x.test)
+    y.data <- bind_rows(y.train, y.test)
+    subject.data <- bind_rows(subject.train, subject.test)
 
+#### Check the structures of the data frame\`s
 

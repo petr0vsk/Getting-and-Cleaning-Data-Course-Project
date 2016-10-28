@@ -26,7 +26,7 @@
     features <- read.table("features.txt") # names of variable features
     activity.labels <- read.table("activity_labels.txt") # levels of varible activity
     
-#### 4. Let\`s do step One and merges the training and the test sets to create one data set 
+#### 4. Let\`s do step one and merges the training and the test sets to create one data set 
 
 
     x.data <- bind_rows(x.train, x.test)
@@ -170,7 +170,7 @@ head(y.data, n=40)
     39    SITTING
     40    SITTING
     
-#### 7. Let\`s do step for and "Appropriately labels the data set with descriptive variable names"
+#### 7. Let\`s do step four and "Appropriately labels the data set with descriptive variable names"
 
     # set column name
     names(subject.data) <- "Subject"

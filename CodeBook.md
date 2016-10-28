@@ -336,4 +336,4 @@ head(y.data, n=40)
     # save as *.csv to more greater clarity
     write.csv(tidy.data.set, "tidy_data_set.csv", row.names = F )
     
-[you can view the file here](https://github.com/petr0vsk/Getting-and-Cleaning-Data-Course-Project/blob/master/tidy_data_set.csv)    
+[you can view the file "tidy_data_set.csv"here](https://github.com/petr0vsk/Getting-and-Cleaning-Data-Course-Project/blob/master/tidy_data_set.csv)    

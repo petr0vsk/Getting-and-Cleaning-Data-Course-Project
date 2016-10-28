@@ -71,5 +71,5 @@ names(tidy.data.set)<-gsub("Mag", "Magnitude", names(tidy.data.set))
 names(tidy.data.set)<-gsub("BodyBody", "Body", names(tidy.data.set))
 # save hard copy of result
 write.csv(tidy.data.set, "tidy_data_set.csv", row.names = F )
-
+write.table(tidy.data.set, "tidy_data_set.txt", row.names = F) # save for submission to coursera
 

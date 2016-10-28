@@ -1,4 +1,4 @@
-## Get the data
+
 #### 1. Download data from Internet 
 
     source.URL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -26,7 +26,7 @@
     features <- read.table("features.txt") # names of variable features
     activity.labels <- read.table("activity_labels.txt") # levels of varible activity
     
-#### 3. Let\`s do step One and merges the training and the test sets to create one data set 
+#### 4. Let\`s do step One and merges the training and the test sets to create one data set 
 
 
     x.data <- bind_rows(x.train, x.test)
@@ -35,7 +35,7 @@
 
 
      
-#### 4. Let\`s do step two and "Extracts only the measurements on the mean and standard deviation for each measurement"
+#### 5. Let\`s do step two and "Extracts only the measurements on the mean and standard deviation for each measurement"
 
 
     features <- read.table("features.txt") 
@@ -113,7 +113,7 @@ str(x.data)
     $ fBodyBodyGyroJerkMag-mean(): num  -0.992 -0.996 -0.995 -0.995 -0.995 ...
     $ fBodyBodyGyroJerkMag-std() : num  -0.991 -0.996 -0.995 -0.995 -0.995 ...
     
-#### Let\`s do step three and "Uses descriptive activity names to name the activities in the data set"
+#### 6. Let\`s do step three and "Uses descriptive activity names to name the activities in the data set"
 
     # replase values with correct activity labels
     y.data[, 1] <- activity.labels[y.data[, 1], 2]
@@ -170,7 +170,7 @@ head(y.data, n=40)
     39    SITTING
     40    SITTING
     
-#### Let\`s do step for and "Appropriately labels the data set with descriptive variable names"
+#### 7. Let\`s do step for and "Appropriately labels the data set with descriptive variable names"
 
     # set column name
     names(subject.data) <- "Subject"
@@ -248,9 +248,9 @@ head(y.data, n=40)
      $ fBodyBodyGyroJerkMag-std() : num  -0.991 -0.996 -0.995 -0.995 -0.995 ...
      $ Activities                 : Factor w/ 6 levels "LAYING","SITTING",..: 3 3 3 3 3 3 3 3 3 3 ...
      $ Subject                    : int  1 1 1 1 1 1 1 1 1 1 ...
-#### Let\`s do step five and "From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject."    
-# aggregate and find means
+#### 8. Let\`s do step five and "From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject."    
 
+    # aggregate and find means
     tidy.data.set <- ddply(final.data.set, .(Subject, Activities), function(x) colMeans(x[, 1:66]))
     # make names of columns some more readable
     names(tidy.data.set)<-gsub("^t", "time", names(tidy.data.set))
@@ -332,7 +332,7 @@ head(y.data, n=40)
      $ frequencyBodyGyroscopeJerkMagnitude-mean()    : num  -0.942 -0.99 -0.995 -0.319 -0.282 ...
      $ frequencyBodyGyroscopeJerkMagnitude-std()     : num  -0.933 -0.987 -0.995 -0.382 -0.392 ...
     
-#### save hard copy of result
+#### 9. Save hard copy of result
     # save as *.csv to more greater clarity
     write.csv(tidy.data.set, "tidy_data_set.csv", row.names = F )
     

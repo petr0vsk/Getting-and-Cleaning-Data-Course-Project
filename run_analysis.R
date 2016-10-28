@@ -43,7 +43,6 @@ subject.data <- bind_rows(subject.train, subject.test)
 
 # -- 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 
-features <- read.table("features.txt") 
 mean.std.features <-  filter( features, str_detect(features$V2, "-(mean|std)\\(\\)" ) ) 
 x.data <- select(x.data, mean.std.features$V1)
 names(x.data) <- mean.std.features$V2

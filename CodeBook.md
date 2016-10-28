@@ -335,5 +335,5 @@ head(y.data, n=40)
 #### 9. Save hard copy of result
     # save as *.csv to more greater clarity
     write.csv(tidy.data.set, "tidy_data_set.csv", row.names = F )
-    
+    write.table(tidy.data.set, "tidy_data_set.txt", row.names = F) # save for submission to coursera
 [you can view the file "tidy_data_set.csv"here](https://github.com/petr0vsk/Getting-and-Cleaning-Data-Course-Project/blob/master/tidy_data_set.csv)    
